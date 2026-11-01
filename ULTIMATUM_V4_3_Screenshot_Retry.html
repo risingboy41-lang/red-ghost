@@ -1,0 +1,364 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#070812">
+<title>ULTIMATUM • Brotherhood Archive</title>
+<style>
+:root{--bg:#070812;--p:#11172a;--p2:#171e36;--l:#2c365c;--t:#f5f7ff;--m:#9da9ca;--a:#795cff;--b:#00d8ff;--c:#ff4fda;--g:#55e394}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 12% 0,#251957,#070812 42%);color:var(--t);font-family:system-ui,Segoe UI,sans-serif}button,input{font:inherit}.top{position:sticky;top:0;z-index:20;background:#070812e8;backdrop-filter:blur(16px);border-bottom:1px solid var(--l);padding:12px}.brand{display:flex;justify-content:space-between;align-items:center}.brand h1{margin:0;font-size:18px;letter-spacing:2px}.muted{color:var(--m)}nav{display:flex;gap:7px;overflow:auto;margin-top:10px}nav button,footer button{border:1px solid var(--l);background:#0c1120;color:#cbd4ee;border-radius:999px;padding:8px 11px;white-space:nowrap}nav button.on{background:linear-gradient(90deg,#291b68,#06384a);color:white}.page{display:none;max-width:1250px;margin:auto;padding:18px 14px 90px}.page.on{display:block}.hero,.panel{background:linear-gradient(135deg,#141a32,#0c101e);border:1px solid var(--l);border-radius:22px;padding:18px;box-shadow:0 18px 60px #0005}.hero{background:linear-gradient(135deg,#281c64,#092a3b 58%,#26122d)}.eyebrow{font-size:11px;letter-spacing:2px;color:#8ceaff;font-weight:900}h2{font-size:clamp(32px,7vw,62px);line-height:.95;margin:9px 0}.actions{display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:12px;padding:10px 13px;background:linear-gradient(100deg,var(--a),#4564ff);color:white;font-weight:800}.alt{background:#0d1426;border:1px solid var(--l)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:12px 0}.stat{background:var(--p);border:1px solid var(--l);border-radius:16px;padding:13px}.stat b{display:block;font-size:24px}.stat span{font-size:11px;color:var(--m)}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:11px;margin-top:13px}.card{background:linear-gradient(180deg,#13192d,#0b0f1d);border:1px solid var(--l);border-radius:18px;padding:13px;cursor:pointer;transition:.18s}.card:hover{transform:translateY(-3px);border-color:#6874d7}.logo{width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-weight:1000;background:conic-gradient(#795cff,#00d8ff,#ff4fda,#795cff);box-shadow:0 0 24px #795cff44;overflow:hidden;flex-shrink:0}.logo{position:relative}.logo .logo-fallback{position:absolute;inset:0;display:grid;place-items:center;z-index:0}.logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:1}.cover{width:100%;height:118px;object-fit:cover;border-radius:11px;margin-bottom:10px;background:#10162a}.dhead .logo img{object-fit:cover}.head{display:flex;justify-content:space-between}.fav{background:none;border:0;color:#697494;font-size:22px}.fav.y{color:#ff61ae}.card h3{font-size:15px;margin:10px 0 5px}.tag{display:inline-block;background:#1b2440;color:#c7d1ee;border-radius:8px;padding:5px 7px;font-size:10px;margin-top:8px}.bar{height:5px;background:#252c48;border-radius:9px;margin-top:10px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--b),var(--a),var(--c))}.search{display:flex;gap:8px;margin:12px 0}.search input{flex:1;background:#0b1020;color:white;border:1px solid var(--l);border-radius:12px;padding:12px;outline:0}.filters{display:flex;gap:6px;overflow:auto;padding-bottom:5px}.filters button{white-space:nowrap;background:#0d1324;color:#aeb8d4;border:1px solid var(--l);border-radius:9px;padding:7px 9px}.filters .on{background:#282057;color:white}.two{display:grid;grid-template-columns:1.4fr .8fr;gap:12px;margin-top:12px}.list{display:grid;gap:7px}.row{display:flex;justify-content:space-between;gap:10px;background:#0d1323;border-radius:11px;padding:10px}.modal{position:fixed;inset:0;background:#000b;backdrop-filter:blur(12px);z-index:50;display:none;align-items:end}.modal.show{display:flex}.sheet{width:min(900px,100%);max-height:92vh;overflow:auto;background:linear-gradient(#171d36,#090c16);border:1px solid #414d76;border-radius:24px 24px 0 0;padding:18px}.close{float:right;background:#0c1221;border:1px solid var(--l);color:white;border-radius:9px;padding:7px 10px}.dhead{display:flex;gap:13px;align-items:center;padding-right:50px}.dhead .logo{width:80px;height:80px;font-size:22px}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:14px 0}.fact{background:#0c1221;border:1px solid var(--l);border-radius:12px;padding:10px}.fact b{display:block}.fact small{color:var(--m)}footer{position:fixed;bottom:0;left:0;right:0;z-index:15;background:#080a14ee;border-top:1px solid var(--l);display:flex;justify-content:center;gap:4px;padding:6px}footer button{background:none;border:0;border-radius:0;color:#8793b5;padding:5px 9px;font-size:11px}footer button.on{color:white}#toast{position:fixed;bottom:65px;left:50%;transform:translate(-50%,20px);opacity:0;background:#151b31;border:1px solid #53608b;padding:9px 13px;border-radius:10px;z-index:100;transition:.2s}#toast.show{opacity:1;transform:translate(-50%,0)}@media(max-width:650px){.stats{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:390px){.grid{grid-template-columns:1fr}.facts{grid-template-columns:1fr}}
+
+/* ULTIMATUM V2 dossier modules */
+.dossier-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.dossier-panel{background:var(--p);border:1px solid var(--l);border-radius:14px;padding:13px;min-width:0}
+.dossier-panel h3{margin:0 0 8px;font-size:1rem}.dossier-panel p,.dossier-panel li{color:var(--m);font-size:.9rem;line-height:1.45}
+.dossier-panel ul{padding-left:18px;margin:8px 0}.shot-gallery{display:flex;gap:10px;margin-top:10px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:2px 1px 10px;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}
+.shot-gallery a{display:block;flex:0 0 min(82%,320px);scroll-snap-align:start;border:1px solid var(--l);border-radius:10px;overflow:hidden;background:#080b16;color:var(--t);text-decoration:none}
+.shot-gallery img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.shot-gallery span{display:block;padding:6px 8px;font-size:.75rem;color:var(--m)}
+.dossier-panel textarea{width:100%;min-height:84px;resize:vertical;background:#080b16;color:var(--t);border:1px solid var(--l);border-radius:9px;padding:10px;font:inherit}
+.rating-row{display:flex;gap:6px;flex-wrap:wrap}.rating-row button{border:1px solid var(--l);background:#080b16;color:var(--m);border-radius:8px;padding:7px 10px}.rating-row button.on{background:var(--a);color:white;border-color:var(--a)}
+.module-note{font-size:.78rem;color:var(--m);line-height:1.4}.shot-status{font-size:.82rem;color:var(--m);margin-top:8px}
+@media(max-width:520px){.dossier-grid{grid-template-columns:1fr}.shot-gallery a{flex-basis:86%}}
+</style></head><body>
+<header class="top"><div class="brand"><div><h1>ULTIMATUM // BROTHERHOOD</h1><span class="muted">layered offline archive</span></div><button class="btn alt" onclick="surprise()">🎲</button></div><nav id="nav"></nav></header>
+<main>
+<section id="home" class="page on"><div class="hero"><div class="eyebrow">COMMAND CENTER • LOCAL-FIRST</div><h2>THE LIBRARY<br>IS YOURS.</h2><p class="muted">A layered mobile-first archive for your Latitude 5410. Library, dossiers, rotation, favorites and progress stay on-device.</p><div class="actions"><button class="btn" onclick="go('library')">ENTER LIBRARY</button><button class="btn alt" onclick="go('rotation')">ACTIVE ROTATION</button></div></div><div class="stats" id="stats"></div><div class="two"><div class="panel"><h3>Brotherhood Doctrine</h3><p class="muted">Old games + low storage + huge content. Keep only 2–3 franchises active. No 2020s padding. No early-2000s filler.</p><div class="list"><div class="row"><span>CPU</span><b>i5-10310U</b></div><div class="row"><span>RAM / GPU</span><b>16 GB / Intel UHD</b></div><div class="row"><span>SSD</span><b>256 GB</b></div></div></div><div class="panel"><h3>Quick Actions</h3><div class="actions"><button class="btn alt" onclick="surprise()">Surprise Me</button><button class="btn alt" onclick="backup()">Backup</button><button class="btn alt" onclick="resetAll()">Reset Choices</button></div></div></div></section>
+<section id="library" class="page"><div class="hero"><div class="eyebrow">ARCHIVE // GAME CARDS</div><h2>LIBRARY</h2><p class="muted">Tap a game for its full dossier. Game-specific cover art and logos load from their image sources. Use “Cache cover art for offline use” while online to save available artwork on this device. If an image source is unavailable, the card keeps its initials rather than inventing fake cover art.</p></div><div class="actions" style="margin:12px 0"><button class="btn" type="button" onclick="cacheCoverArt(this)">⬇ Cache cover art for offline use</button><span class="muted" id="cover-cache-status">Prepare artwork while online; cached images stay on this device.</span></div><div class="search"><input id="q" placeholder="Search title, genre, status..." oninput="render()"></div><div class="filters" id="filters"></div><div class="grid" id="grid"></div></section>
+<section id="rotation" class="page"><div class="hero"><div class="eyebrow">3-SLOT COMMAND DECK</div><h2>ROTATION</h2><p class="muted">Your active games, saved on-device.</p></div><div class="grid" id="rotationGrid"></div></section>
+<section id="vault" class="page"><div class="hero"><div class="eyebrow">CANDIDATES • WILDCARDS • MERIT</div><h2>THE VAULT</h2><p class="muted">Extra games that earned consideration without deleting the established library.</p></div><div class="grid" id="vaultGrid"></div></section>
+<section id="machine" class="page"><div class="hero"><div class="eyebrow">HARDWARE // PROFILE</div><h2>THE MACHINE</h2><p class="muted">Dell Latitude 5410 — the platform this archive is built around.</p></div><div class="two"><div class="panel"><h3>Hardware</h3><div class="list"><div class="row"><span>CPU</span><b>Intel Core i5-10310U</b></div><div class="row"><span>RAM</span><b>16 GB</b></div><div class="row"><span>GPU</span><b>Intel UHD</b></div><div class="row"><span>Storage</span><b>256 GB SSD</b></div></div></div><div class="panel"><h3>Legend</h3><div class="list"><div class="row"><span>🟢 Perfect</span><span>High / Maxed</span></div><div class="row"><span>🔵 Well</span><span>Medium / Low</span></div><div class="row"><span>🟡 Candidate</span><span>Verify first</span></div></div></div></div></section>
+</main><footer id="foot"></footer><div class="modal" id="modal"><div class="sheet" id="sheet"></div></div><div id="toast"></div>
+<script>
+const G=[{"name": "Skyrim (Original 2011)", "appid":72850, "genre": "RPG / Sandbox", "status": "Core", "bio": "The nightmare: a huge fantasy world built for exploration, quests, factions and absurdly long sessions."}, {"name": "Skyrim Special Edition (2016)", "appid":489830, "genre": "RPG / Sandbox", "status": "Core", "bio": "RPG / Sandbox entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Fallout: New Vegas", "appid":22380, "genre": "RPG / Sandbox", "status": "Core", "bio": "Choice-heavy wasteland RPG with factions, builds, companions and replayable quest paths."}, {"name": "Fallout 3", "appid":22300, "genre": "RPG / Sandbox", "status": "Core", "bio": "RPG / Sandbox entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "The Elder Scrolls IV: Oblivion", "appid":22330, "genre": "Game", "status": "Core", "bio": "Game entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "The Elder Scrolls III: Morrowind", "appid":22320, "genre": "Game", "status": "Core", "bio": "Game entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Mass Effect Original Trilogy (1–3)", "appid":17460, "genre": "RPG / Story", "status": "Core", "bio": "RPG / Story entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Minecraft (Java / Bedrock)", "appid":0, "genre": "Sandbox", "status": "Core", "bio": "The endless: procedural worlds, building, exploration and self-made goals."}, {"name": "Mount & Blade: Warband", "appid":48700, "genre": "Strategy / Sandbox", "status": "Core", "bio": "The ruthless: a medieval campaign sandbox where kingdoms, battles and personal stories emerge."}, {"name": "Mount & Blade: With Fire & Sword", "appid":48720, "genre": "Strategy / Sandbox", "status": "Core", "bio": "Strategy / Sandbox entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Ghost Recon (2001) + Expansions", "appid":1360, "genre": "Tactical", "status": "Core", "bio": "Tactical entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Ghost Recon Advanced Warfighter (1 & 2)", "appid":13510, "genre": "Tactical", "status": "Core", "bio": "Tactical entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Ghost Recon: Future Soldier (2012)", "appid":212630, "genre": "Tactical", "status": "Core", "bio": "Tactical entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Call of Duty 1 & 2", "appid":2620, "genre": "Military FPS", "status": "Core", "bio": "Military FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Call of Duty 4: Modern Warfare", "appid":7940, "genre": "Military FPS", "status": "Core", "bio": "Military FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Call of Duty: World at War", "appid":10090, "genre": "Military FPS", "status": "Core", "bio": "Military FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Call of Duty: Modern Warfare 2 & 3", "appid":10180, "genre": "Military FPS", "status": "Core", "bio": "Military FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Call of Duty: Black Ops 1", "appid":42700, "genre": "Military FPS", "status": "Core", "bio": "Military FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Medal of Honor: Allied Assault + Expansions", "appid":0, "genre": "Military FPS", "status": "Core", "bio": "Military FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Medal of Honor: Pacific Assault & Airborne", "appid":24840, "genre": "Military FPS", "status": "Core", "bio": "Military FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Medal of Honor (2010) & Warfighter", "appid":47790, "genre": "Military FPS", "status": "Core", "bio": "Military FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Left 4 Dead 2", "appid":550, "genre": "Co-op / Action", "status": "Core", "bio": "Co-op / Action entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Prototype 1 (2009)", "appid":10150, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Prototype 2 (2012)", "appid":115320, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Just Cause 1 & 2", "appid":6880, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Far Cry 1 & 2", "appid":19900, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Far Cry 3 (2012)", "appid":220240, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Mafia I (2002) & Mafia II (Original)", "appid":1030830, "genre": "Crime", "status": "Core", "bio": "Crime entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Assassin's Creed 1 & II", "appid":15100, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "AC: Brotherhood & Revelations", "appid":48190, "genre": "Game", "status": "Core", "bio": "Game entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Assassin's Creed IV: Black Flag", "appid":242050, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Hitman: Blood Money", "appid":6860, "genre": "Stealth", "status": "Core", "bio": "A stealth sandbox where missions can be solved through radically different approaches."}, {"name": "Hitman: Absolution (2012)", "appid":203140, "genre": "Stealth", "status": "Core", "bio": "Stealth entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Dishonored (2012)", "appid":205100, "genre": "Stealth / RPG", "status": "Core", "bio": "Stealth / RPG entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Sleeping Dogs (2012)", "appid":202170, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Metal Gear Solid V: The Phantom Pain", "appid":287700, "genre": "Stealth / Open World", "status": "Core", "bio": "Stealth / Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Mad Max (2015)", "appid":234140, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Prince of Persia: The Sands of Time Trilogy", "appid":13600, "genre": "Action Adventure", "status": "Core", "bio": "Action Adventure entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Batman: Arkham Asylum", "appid":35140, "genre": "Action Adventure", "status": "Core", "bio": "Action Adventure entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Batman: Arkham City", "appid":200260, "genre": "Action Adventure", "status": "Core", "bio": "Action Adventure entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Deus Ex: Human Revolution", "appid":238010, "genre": "RPG / Stealth", "status": "Core", "bio": "RPG / Stealth entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Spec Ops: The Line", "appid":50300, "genre": "Story / Action", "status": "Core", "bio": "Story / Action entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Brothers in Arms: Hell's Highway", "appid":15390, "genre": "Tactical", "status": "Core", "bio": "Tactical entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Sniper Elite 2", "appid":63380, "genre": "Stealth / Tactical", "status": "Core", "bio": "Stealth / Tactical entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Sniper Elite 3", "appid":238090, "genre": "Stealth / Tactical", "status": "Core", "bio": "Stealth / Tactical entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Alan Wake (2010)", "appid":108710, "genre": "Story / Action", "status": "Core", "bio": "Story / Action entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Borderlands 2", "appid":49520, "genre": "FPS / RPG", "status": "Core", "bio": "FPS / RPG entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "S.T.A.L.K.E.R.: Shadow of Chernobyl", "appid":4500, "genre": "Survival / FPS", "status": "Core", "bio": "Survival / FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Dead Space (2008)", "appid":17470, "genre": "Survival Horror", "status": "Core", "bio": "Survival Horror entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Tomb Raider (2013)", "appid":203160, "genre": "Action Adventure", "status": "Core", "bio": "Action Adventure entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "L.A. Noire", "appid":110800, "genre": "Crime / Investigation", "status": "Core", "bio": "Crime / Investigation entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Saints Row: The Third", "appid":55230, "genre": "Open World", "status": "Core", "bio": "Open World entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "BioShock", "appid":7670, "genre": "Story / FPS", "status": "Core", "bio": "Story / FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "BioShock Infinite", "appid":8870, "genre": "Story / FPS", "status": "Core", "bio": "Story / FPS entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Portal", "appid":400, "genre": "Puzzle", "status": "Core", "bio": "Puzzle entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Portal 2", "appid":620, "genre": "Puzzle", "status": "Core", "bio": "A larger puzzle package with campaign depth and strong replay value."}, {"name": "Don Bradman Cricket 14", "appid":216260, "genre": "Cricket / Simulation", "status": "Candidate", "bio": "Cricket / Simulation entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Don Bradman Cricket 17", "appid":464850, "genre": "Cricket / Simulation", "status": "Candidate", "bio": "Cricket / Simulation entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "EA Sports Cricket 07", "appid":0, "genre": "Game", "status": "Candidate", "bio": "Game entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Ashes Cricket (2017)", "appid":649640, "genre": "Cricket / Simulation", "status": "Candidate", "bio": "Cricket / Simulation entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Terraria", "appid":105600, "genre": "Sandbox / Survival", "status": "Wildcard", "bio": "Procedural sandbox with exploration, crafting, bosses and enormous replayability."}, {"name": "Dragon Age: Origins (2009)", "appid":47810, "genre": "RPG / Strategy", "status": "Merit Addition", "bio": "RPG / Strategy entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Civilization V (2010)", "appid":8930, "genre": "Strategy / 4X", "status": "Merit Addition", "bio": "Strategy / 4X entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Torchlight II (2012)", "appid":200710, "genre": "Action RPG", "status": "Merit Addition", "bio": "Action RPG entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "FTL: Faster Than Light (2012)", "appid":212680, "genre": "Strategy / Roguelike", "status": "Merit Addition", "bio": "Strategy / Roguelike entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "XCOM: Enemy Unknown (2012)", "appid":200510, "genre": "Strategy / Tactical", "status": "Merit Addition", "bio": "Strategy / Tactical entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Company of Heroes (2006)", "appid":228200, "genre": "RTS / Tactical", "status": "Merit Addition", "bio": "RTS / Tactical entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "Euro Truck Simulator 2 (2012)", "appid":227300, "genre": "Driving / Simulation", "status": "Merit Addition", "bio": "Driving / Simulation entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}, {"name": "The Witcher 2: Assassins of Kings (2011)", "appid":20920, "genre": "Game", "status": "Merit Addition", "bio": "Game entry selected for the Ultimatum archive because it adds a distinct gameplay loop, era-appropriate content and strong replay potential."}],K='ultimatum';let S=JSON.parse(localStorage.getItem(K)||'{"fav":[],"rot":[],"done":[],"prog":{}}'),F='All'; S.notes=S.notes||{}; S.ratings=S.ratings||{};
+const nav=[['home','⌂','Command'],['library','▦','Library'],['rotation','⚔','Rotation'],['vault','◆','Vault'],['machine','⚙','Machine']];
+document.getElementById('nav').innerHTML=nav.map(x=>`<button onclick="go('${x[0]}')" data-n="${x[0]}">${x[1]} ${x[2]}</button>`).join('');
+document.getElementById('foot').innerHTML=nav.map(x=>`<button onclick="go('${x[0]}')" data-f="${x[0]}">${x[1]}<br>${x[2]}</button>`).join('');
+function save(){localStorage.setItem(K,JSON.stringify(S));stats()}function toast(t){let e=document.getElementById('toast');e.textContent=t;e.className='show';setTimeout(()=>e.className='',1400)}
+function go(id){document.querySelectorAll('.page').forEach(e=>e.classList.toggle('on',e.id==id));document.querySelectorAll('[data-n],[data-f]').forEach(e=>e.classList.toggle('on',(e.dataset.n||e.dataset.f)==id));render();scrollTo(0,0)}
+function stats(){document.getElementById('stats').innerHTML=[['GAMES',G.length],['FINISHED',S.done.length],['FAVORITES',S.fav.length],['ACTIVE',S.rot.length+'/3']].map(x=>`<div class="stat"><b>${x[1]}</b><span>${x[0]}</span></div>`).join('')}
+function ini(n){let a=n.replace(/[^A-Za-z0-9 ]/g,' ').trim().split(/\s+/);return(a.length>1?a[0][0]+a[1][0]:n.slice(0,3)).toUpperCase()}
+function fit(g){return g.status==='Candidate'?'VERIFY':g.status==='Wildcard'?'WILDCARD':'WELL'}
+// Real game artwork sources. Steam IDs use Steam's own artwork endpoints;
+// non-Steam entries use specific publisher / game-database artwork.
+const ART={
+  'Mass Effect Original Trilogy (1–3)':[
+    'https://media.contentapi.ea.com/content/dam/gin/images/2017/01/mass-effect-trilogy.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/17460/header.jpg'
+  ],
+  'Minecraft (Java / Bedrock)':[
+    'https://minecraft.wiki/images/MC_key_art.jpg',
+    'https://minecraft.wiki/images/MC_key_art.png',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/1928870/header.jpg'
+  ],
+  'Ghost Recon (2001) + Expansions':[
+    'https://images.launchbox-app.com/d4a7597f-8e2d-4d69-97e0-2ee0ff759b9d.png',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/1360/header.jpg'
+  ],
+  'Ghost Recon Advanced Warfighter (1 & 2)':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/13510/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/13510/header.jpg'
+  ],
+  'Ghost Recon: Future Soldier (2012)':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/212630/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/212630/header.jpg'
+  ],
+  'Medal of Honor: Allied Assault + Expansions':[
+    'https://media.contentapi.ea.com/content/dam/gin/images/2017/01/medal-of-honor-allied-assault-war-chest-keyart.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/4760/header.jpg'
+  ],
+  'Medal of Honor: Pacific Assault & Airborne':[
+    'https://media.contentapi.ea.com/content/dam/gin/images/2017/01/medal-of-honor-airborne.jpg',
+    'https://media.contentapi.ea.com/content/dam/gin/images/2017/01/medal-of-honor-pacific-assault-keyart.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/24840/header.jpg'
+  ],
+  'Medal of Honor (2010) & Warfighter':[
+    'https://media.contentapi.ea.com/content/dam/gin/images/2017/01/medal-of-honor-warfighter.jpg',
+    'https://media.contentapi.ea.com/content/dam/gin/images/2017/01/medal-of-honor-gen-keyart.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/47790/header.jpg'
+  ],
+  'Prototype 1 (2009)':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/10150/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/10150/header.jpg'
+  ],
+  'Prototype 2 (2012)':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/115320/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/115320/header.jpg'
+  ],
+  'Far Cry 1 & 2':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/19900/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/19900/header.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/13520/header.jpg'
+  ],
+  "Assassin's Creed 1 & II":[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/15100/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/15100/header.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/33230/header.jpg'
+  ],
+  'Prince of Persia: The Sands of Time Trilogy':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/13600/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/13600/header.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/13500/header.jpg'
+  ],
+  'Brothers in Arms: Hell\'s Highway':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/15390/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/15390/header.jpg'
+  ],
+  'EA Sports Cricket 07':[
+    'https://cdn.mobygames.com/promos/5156589-cricket-07-packshot.jpg'
+  ],
+  'Don Bradman Cricket 14':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/216260/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/216260/header.jpg'
+  ],
+  'Don Bradman Cricket 17':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/464850/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/464850/header.jpg'
+  ],
+  'Ashes Cricket (2017)':[
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/649640/library_600x900.jpg',
+    'https://cdn.cloudflare.steamstatic.com/steam/apps/649640/header.jpg'
+  ]
+};
+function candidates(g){
+  const custom=ART[g.name]||[];
+  const id=g.appid;
+  const steam=id?[`https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/library_600x900.jpg`,`https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/header.jpg`,`https://cdn.cloudflare.steamstatic.com/steam/apps/${id}/capsule_616x353.jpg`]:[];
+  return [...new Set([...custom,...steam])];
+}
+function art(g){return candidates(g)[0]||''}
+function nextArt(img){
+  let list=[];try{list=JSON.parse(decodeURIComponent(img.dataset.sources||'%5B%5D'))}catch(e){}
+  const next=(+(img.dataset.step||0))+1;img.dataset.step=next;
+  if(next<list.length){img.src=list[next]}else{img.remove()}
+}
+function imageTag(g,cls,alt){
+  const list=candidates(g);if(!list.length)return '';
+  return `<img${cls?` class="${cls}"`:''} src="${list[0]}" alt="${alt}" loading="lazy" data-game-name="${encodeURIComponent(g.name)}" data-step="0" data-sources="${encodeURIComponent(JSON.stringify(list))}" onerror="nextArt(this)">`;
+}
+function logo(g){return `<span class="logo-fallback">${ini(g.name)}</span>${imageTag(g,'',g.name+' game artwork')}`}
+function cover(g){return imageTag(g,'cover',g.name+' cover art')||'<div class="cover"></div>'}
+function card(g,i){let p=S.prog[i]||0;return `<article class="card" onclick="openD(${i})"><div class="head"><div class="logo">${logo(g)}</div><button class="fav ${S.fav.includes(i)?'y':''}" onclick="event.stopPropagation();fav(${i})">${S.fav.includes(i)?'♥':'♡'}</button></div>${cover(g)}<h3>${g.name}</h3><div class="muted">${g.genre} • ${g.status}</div><span class="tag">${g.status==='Core'?'CORE':g.status} · ${fit(g)}</span><div class="bar"><i style="width:${p}%"></i></div></article>`}
+function render(){let q=(document.getElementById('q')?.value||'').toLowerCase();let vals=['All','Core','Candidate','Wildcard','Merit Addition','Perfect','Well'];document.getElementById('filters').innerHTML=vals.map(v=>`<button class="${F==v?'on':''}" onclick="F='${v}';render()">${v}</button>`).join('');let L=G.map((g,i)=>[g,i]).filter(x=>(!q||JSON.stringify(x[0]).toLowerCase().includes(q))&&(F=='All'||x[0].status==F||x[0].genre.includes(F)||x[0].name.includes(F)));document.getElementById('grid').innerHTML=L.map(x=>card(...x)).join('')||'<div class="panel">No match.</div>';document.getElementById('rotationGrid').innerHTML=S.rot.length?S.rot.map(i=>card(G[i],i)).join(''):'<div class="panel">No active games. Add up to 3 from a dossier.</div>';document.getElementById('vaultGrid').innerHTML=G.map((g,i)=>[g,i]).filter(x=>x[0].status!='Core').map(x=>card(...x)).join('');stats()}
+function fav(i){S.fav=S.fav.includes(i)?S.fav.filter(x=>x!=i):[...S.fav,i];save();render()}function rot(i){if(S.rot.includes(i)){S.rot=S.rot.filter(x=>x!=i);toast('Removed')}else if(S.rot.length<3){S.rot.push(i);toast('Added')}else{toast('Rotation full')}save();openD(i)}function done(i){S.done=S.done.includes(i)?S.done.filter(x=>x!=i):[...S.done,i];save();openD(i)}function prog(i,v){S.prog[i]=+v;save();document.getElementById('pv').textContent=v+'%'}
+const EXTRA={
+  'Skyrim (Original 2011)':{hints:['Use the journal and map markers when a quest objective feels vague.','Carry a ranged option for flying enemies and a few healing potions for surprises.','Try one faction or crafting loop at a time; you do not need to clear every icon.'],secrets:['Read books and notes you pick up; some reveal locations or quest leads.','Look for side paths, word walls and environmental clues while exploring.'],controls:'WASD move · E activate · Tab menu · F favorite/equip view (defaults vary by setup).',perf:'Start at 1366×768 or 1600×900, medium shadows and low/medium AA. Keep view distance moderate if frame rate dips.'},
+  'Skyrim Special Edition (2016)':{hints:['Check active effects and resistances before a difficult dungeon.','A follower can carry spare loot and draw attention away from you.','Save before entering an unfamiliar ruin or starting a major quest.'],secrets:['Inspect side rooms and locked containers; dungeon rewards are often off the direct route.','Use crafting stations to experiment with builds without committing to one combat style.'],controls:'WASD move · E activate · Tab menu · M map (default keybinds can vary).',perf:'For the Latitude 5410, try 1280×720 or 1366×768, medium textures, low shadows and modest god rays.'},
+  'Fallout: New Vegas':{hints:['Talk to characters again after gaining new quest information; dialogue can open alternatives.','Check weapon condition and carry a repair option before long trips.','Companions and skill checks can change how a quest unfolds.'],secrets:['Look for terminals, notes and environmental storytelling in side locations.','Explore away from the main road when your gear and supplies are ready.'],controls:'WASD move · E use · Tab Pip-Boy (default bindings); check Settings for the exact map/menu keys.',perf:'This older game should generally suit the Latitude 5410. Use native resolution first; reduce anti-aliasing if you see stutter.'},
+  'Minecraft (Java / Bedrock)':{hints:['Make a bed and mark your base before exploring far from spawn.','Carry blocks, food, torches and a spare tool when mining.','Use coordinates or clear landmarks so you can return home.'],secrets:['Notice unusual terrain, ruined structures and underground sounds; they can point toward discoveries.','Try a small redstone build in a test area before scaling it up.'],controls:'WASD move · Space jump · E inventory · Shift sneak · F5 perspective in Java Edition.',perf:'On Intel UHD, start with 6–8 render chunks, fast graphics and clouds off; in Java, try performance mods only from trusted sources.'},
+  'Mass Effect Original Trilogy (1–3)':{hints:['Talk to squadmates between missions; their dialogue and loyalty content can change over time.','Read mission briefings and squad powers before choosing a loadout.','For a spoiler-free run, complete available side assignments before the point of no return when clearly signposted.'],secrets:['Check the ship and squad area after major missions for new conversations.','Codex entries can explain setting details without revealing later plot turns.'],controls:'WASD move · mouse aim/fire · use squad-power and command keys shown in the in-game controls menu.',perf:'Use 1280×720 or 1366×768, medium textures and low/medium shadows if playing Legendary Edition on Intel UHD.'},
+  'Ghost Recon (2001) + Expansions':{hints:['Move slowly and use cover rather than sprinting into unknown areas.','Check the briefing and map before deployment; objective order matters.','Keep the squad together enough to support each other, but avoid bunching in exposed areas.'],secrets:['Explore side routes around objectives; alternate approaches can reduce exposure.','Review mission debriefs for missed objectives and team performance.'],controls:'Keyboard/mouse tactical controls vary by edition; open Options → Controls before the first mission.',perf:'For the original PC release, use conservative compatibility settings and test windowed mode if display scaling acts up.'},
+  'Prototype 1 & 2':{hints:['Keep moving during large fights; use rooftops to regain space and plan your next move.','Experiment with different powers on small groups before tougher encounters.','If overwhelmed, disengage and approach from a different direction.'],secrets:['Explore rooftops and side streets between missions for collectibles.','Replay challenges to learn movement routes and ability combinations.'],controls:'WASD move · Space jump · mouse combat; exact power keys depend on the game and control preset.',perf:'Try 1280×720, lower shadows and disable extra effects if frame pacing is uneven.'},
+  "Assassin's Creed 1 & II":{hints:['Blend with crowds and use rooftops to plan a route before crossing guarded streets.','Synchronize viewpoints to reveal nearby map information.','For stealth, observe patrol patterns first instead of rushing the target.'],secrets:['Look for viewpoints and optional collectibles on rooftops and side alleys.','Read database entries if you want extra lore without needing a walkthrough.'],controls:'WASD move · mouse/camera controls · use the on-screen low/high profile prompts; key mappings differ by title.',perf:'Use 1280×720 or 1366×768 and lower shadows/AA first if older Ubisoft games stutter.'},
+  'Far Cry 1 & 2':{hints:['Scout an outpost before engaging and identify a safe route out.','Use cover and keep track of ammunition; long fights can drain supplies.','In Far Cry 2, maintain awareness of travel routes and mission objectives before leaving a safe area.'],secrets:['Check side paths and small structures for supplies and alternate approaches.','Try different approaches to a location on a replay rather than forcing one tactic.'],controls:'WASD move · mouse aim/fire · use the in-game control screen for vehicle and interaction keys.',perf:'Start at 1280×720, medium textures and low shadows; older titles may need compatibility mode or a frame cap.'},
+  'Prince of Persia: The Sands of Time Trilogy':{hints:['Pause before each jump sequence and look for ledges, poles and wall-run surfaces.','Treat combat as a timing puzzle; avoid button-mashing when surrounded.','Use the rewind mechanic in Sands of Time to learn difficult platforming sections.'],secrets:['Inspect side chambers and optional routes for collectibles and extra health upgrades.','Listen for audio cues that signal nearby hazards or interactive objects.'],controls:'WASD move · Space jump/parkour · mouse/camera controls; consult each title’s control menu for combat actions.',perf:'Try 1280×720 and compatibility settings if a title has old fullscreen or resolution issues.'},
+  "Brothers in Arms: Hell's Highway":{hints:['Use the tactical command system to place your squad in cover before advancing.','Flanking is usually more effective than trading shots from the same position.','Watch squad status and reposition if a team is pinned down.'],secrets:['Check the edges of combat areas when safe; optional collectibles may be tucked away.','Use mission briefings to understand the intended tactical roles.'],controls:'WASD move · mouse aim · use the squad command prompts and control settings for exact keys.',perf:'Try 1280×720 or 1366×768, medium textures and low shadows if frame rate dips.'},
+  'EA Sports Cricket 07':{hints:['Practice timing in a low-pressure match before trying aggressive shots.','Rotate strike and read the field before choosing a shot.','When bowling, vary line and length rather than repeating one delivery.'],secrets:['Explore tournament and custom match options for different formats.','Test batting and bowling controls in practice before a long tournament.'],controls:'Keyboard mappings vary by patch/configuration; check the Controls menu and write down your preferred shot keys.',perf:'The game is very old; try compatibility mode and a stable resolution if modern Windows scaling causes trouble.'},
+  'Don Bradman Cricket 14':{hints:['Use practice nets to learn timing and shot placement before a full match.','Avoid forcing a shot when the ball is outside your preferred zone.','For bowling, build pressure with a consistent plan before attempting a surprise delivery.'],secrets:['Try different field presets and custom scenarios to practice one skill at a time.','Review match highlights/replays to learn why a shot or delivery failed.'],controls:'Check the in-game controller/keyboard mapping; batting timing and shot direction depend on the selected control scheme.',perf:'Use a modest resolution and reduce shadows/anti-aliasing first if the laptop struggles.'},
+  'Don Bradman Cricket 17':{hints:['Spend time in practice before changing difficulty; timing is more important than constant power shots.','Use field placements that match the bowler’s plan.','Watch the release point and pace when batting.'],secrets:['Try custom practice scenarios for specific deliveries and shot types.','Experiment with field presets before editing every fielder manually.'],controls:'Use the control-mapping menu to confirm batting, bowling and fielding inputs for your chosen device.',perf:'Start at 1280×720 and lower effects if frame pacing is uneven.'},
+  'Ashes Cricket 2017':{hints:['Practice shot timing before attempting lofted shots.','Set a field for the bowler’s intended line and length.','Build an innings patiently; risky shots are easier once you read the conditions.'],secrets:['Try practice scenarios and different pitch conditions to learn how the ball behaves.','Review replays to spot mistimed shots.'],controls:'Check in-game controls for batting, bowling and fielding; controller layouts can differ.',perf:'Try 1280×720 and lower shadows/effects on Intel UHD.'}
+};
+function infoFor(g){
+ const x=EXTRA[g.name]||{}; const genre=(g.genre||'').toLowerCase();
+ const hints=x.hints|| (genre.includes('strategy')||genre.includes('tactical')?['Read the mission/objective text before committing units.','Scout first and keep a fallback plan.','Learn one system at a time before increasing difficulty.']:genre.includes('racing')||genre.includes('sports')||genre.includes('cricket')?['Use practice mode to learn timing before a long event.','Make small adjustments and compare results rather than changing everything at once.','Review the controls and camera options before starting a tournament.']:genre.includes('rpg')||genre.includes('story')?['Talk to characters and read quest objectives before leaving an area.','Keep a balanced supply of healing items and useful equipment.','Save before major decisions or entering unfamiliar areas.']:['Explore side paths when it is safe.','Check objectives and control settings when stuck.','Try one new mechanic at a time and use checkpoints to learn safely.']);
+ const secrets=x.secrets||['Check optional rooms and side paths for collectibles or extra resources.','Read notes, logs or codex entries for world details.'];
+ const controls=x.controls||'Open the game’s Options → Controls menu; default keys vary by game and edition.';
+ const perf=x.perf|| (g.status==='Candidate'?'Verify compatibility and test at 1280×720 before tuning other settings.':'On the Latitude 5410 / Intel UHD, start at 1280×720 or 1366×768; lower shadows and anti-aliasing first.');
+ return {hints,secrets,controls,perf};
+}
+function screenshotSearch(g){return 'https://www.google.com/search?tbm=isch&q='+encodeURIComponent(g.name+' actual gameplay screenshots');}
+const SHOT_DB='ultimatum-shot-cache-v1';
+function openShotDB(){return new Promise((resolve,reject)=>{if(!('indexedDB' in window)){reject(new Error('Offline cache unavailable'));return;}const req=indexedDB.open(SHOT_DB,2);req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains('games'))req.result.createObjectStore('games',{keyPath:'id'});if(!req.result.objectStoreNames.contains('covers'))req.result.createObjectStore('covers',{keyPath:'name'});};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error);});}
+async function getCachedShots(id){const db=await openShotDB();return new Promise((resolve,reject)=>{const tx=db.transaction('games','readonly'),req=tx.objectStore('games').get(String(id));req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error);});}
+async function putCachedShots(id,shots){const db=await openShotDB();return new Promise((resolve,reject)=>{const tx=db.transaction('games','readwrite');tx.objectStore('games').put({id:String(id),shots,savedAt:Date.now()});tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error);});}
+function renderShotGallery(box,g,shots,offline=false){
+ const safeName=g.name.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+ const urls=shots.map(x=>x.blob?URL.createObjectURL(x.blob):x.path_thumbnail);
+ box.innerHTML='<div class="shot-gallery" id="shot-gallery-live">'+shots.map((x,n)=>'<a href="'+(x.path_full||urls[n])+'" target="_blank" rel="noopener"><img loading="lazy" src="'+urls[n]+'" alt="'+safeName+' gameplay screenshot '+(n+1)+'"><span>Gameplay screenshot '+(n+1)+'</span></a>').join('')+'</div><div class="shot-controls" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:6px"><button type="button" onclick="scrollShots(this,-1)">‹ Previous</button><button type="button" onclick="scrollShots(this,1)">Next ›</button><button type="button" onclick="saveOfflineShots('+g.appid+',this)">Save these screenshots offline</button><span class="module-note">'+(offline?'Loaded from this device’s offline cache.':'Actual game screenshots. Swipe sideways to browse.')+'</span></div>';
+ const gallery=box.querySelector('.shot-gallery');
+ box.querySelectorAll('.shot-gallery img').forEach(img=>img.addEventListener('error',()=>{const a=img.closest('a');if(a)a.style.display='none';if(![...gallery.querySelectorAll('a')].some(link=>link.style.display!=='none'))box.innerHTML='<div class="shot-status">Screenshots could not be displayed. <a target="_blank" rel="noopener" href="'+screenshotSearch(g)+'">Open game-specific gameplay screenshots</a>.</div>';}));
+}
+function scrollShots(button,dir){const box=button.closest('.panel');const gallery=box&&box.querySelector('.shot-gallery');if(gallery)gallery.scrollBy({left:dir*Math.max(240,gallery.clientWidth*.8),behavior:'smooth'});}
+async function saveOfflineShots(appid,button){
+ const box=button.closest('.panel'),gallery=box&&box.querySelector('.shot-gallery');if(!gallery)return;
+ const links=[...gallery.querySelectorAll('a')],imgs=[...gallery.querySelectorAll('img')];
+ button.disabled=true;button.textContent='Saving offline…';
+ try{
+   const shots=[];
+   for(let i=0;i<links.length;i++){
+     const src=imgs[i].src;
+     let blob=null;
+     if(src.startsWith('data:')){const res=await fetch(src);blob=await res.blob();}
+     else if(src.startsWith('blob:')){const res=await fetch(src);blob=await res.blob();}
+     else{
+       let last;
+       const encodedSrc=encodeURIComponent(src);
+       const imageUrls=[
+         'https://corsproxy.io/?url='+encodedSrc,
+         'https://api.allorigins.win/raw?url='+encodedSrc,
+         'https://images.weserv.nl/?url='+encodeURIComponent(src.replace(/^https?:\/\//,''))
+       ];
+       for(const u of imageUrls){
+         try{
+           const res=await fetch(u,{cache:'no-store',credentials:'omit'});
+           if(!res.ok)throw new Error('HTTP '+res.status);
+           const b=await res.blob();
+           if(!b.type.startsWith('image/')||b.size<1500)throw new Error('Not a valid image');
+           blob=b;break;
+         }catch(e){last=e;}
+       }
+       if(!blob)throw last||new Error('Could not cache image');
+     }
+     shots.push({blob,path_full:links[i].href});
+   }
+   await putCachedShots(appid,shots);button.textContent='Saved for offline ✓';
+   const note=box.querySelector('.module-note');if(note)note.textContent='Saved on this device. Open this archive again in the same browser to view these screenshots offline.';
+ }catch(e){button.textContent='Offline save failed';const note=box.querySelector('.module-note');if(note)note.textContent='This browser could not cache these images. Keep the archive online and try again.';}
+ finally{button.disabled=false;}
+}
+
+async function getCachedCover(name){
+ const db=await openShotDB();
+ return new Promise((resolve,reject)=>{const tx=db.transaction('covers','readonly'),req=tx.objectStore('covers').get(name);req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error);});
+}
+async function putCachedCover(name,blob,url){
+ const db=await openShotDB();
+ return new Promise((resolve,reject)=>{const tx=db.transaction('covers','readwrite');tx.objectStore('covers').put({name,blob,url,savedAt:Date.now()});tx.oncomplete=()=>resolve(true);tx.onerror=()=>reject(tx.error);});
+}
+const coverBlobUrls=new Map();
+async function hydrateCachedCovers(root=document){
+ const imgs=[...root.querySelectorAll('img[data-game-name]')];
+ for(const img of imgs){
+  if(img.dataset.cached==='1')continue;
+  let name='';try{name=decodeURIComponent(img.dataset.gameName||'')}catch(e){}
+  if(!name)continue;
+  try{
+   const record=await getCachedCover(name);
+   if(record&&record.blob){
+    let blobUrl=coverBlobUrls.get(name);
+    if(!blobUrl){blobUrl=URL.createObjectURL(record.blob);coverBlobUrls.set(name,blobUrl);}
+    img.src=blobUrl;img.dataset.cached='1';img.onerror=null;
+   }
+  }catch(e){}
+ }
+}
+async function cacheCoverArt(button){
+ const status=document.getElementById('cover-cache-status');
+ button.disabled=true;
+ let saved=0,failed=0;
+ const total=G.length;
+ if(status)status.textContent='Caching artwork: 0/'+total;
+ try{
+  for(let i=0;i<G.length;i++){
+   const g=G[i],urls=candidates(g);
+   let existing=null;
+   try{existing=await getCachedCover(g.name);}catch(e){}
+   if(existing&&existing.blob){saved++;continue;}
+   let blob=null,used='';
+   for(const url of urls){
+    const attempts=[url,'https://images.weserv.nl/?url='+encodeURIComponent(url.replace(/^https?:\/\//,''))];
+    for(const attempt of attempts){
+     try{
+      const response=await fetch(attempt,{mode:'cors',cache:'force-cache'});
+      if(!response.ok)continue;
+      const candidate=await response.blob();
+      if(candidate&&candidate.size>1500&&candidate.type.startsWith('image/')){blob=candidate;used=url;break;}
+     }catch(e){}
+    }
+    if(blob)break;
+   }
+   if(blob){await putCachedCover(g.name,blob,used);saved++;}
+   else failed++;
+   if(status)status.textContent='Caching artwork: '+(i+1)+'/'+total+' • saved '+saved+' • unavailable '+failed;
+  }
+  if(status)status.textContent='Offline cover cache ready: '+saved+'/'+total+' games saved'+(failed?' • '+failed+' unavailable':'')+'.';
+  await hydrateCachedCovers(document);
+  toast('Cover cache: '+saved+'/'+total);
+ }catch(e){
+  if(status)status.textContent='Caching stopped. '+saved+' saved so far; keep this page open and try again.';
+ }finally{button.disabled=false;}
+}
+const coverCacheObserver=new MutationObserver(mutations=>{
+ for(const mutation of mutations)for(const node of mutation.addedNodes)if(node.nodeType===1){
+  if(node.matches&&node.matches('img[data-game-name]'))hydrateCachedCovers(node.parentElement||document);
+  else if(node.querySelectorAll)hydrateCachedCovers(node);
+ }
+});
+coverCacheObserver.observe(document.body,{childList:true,subtree:true});
+hydrateCachedCovers(document);
+
+const SHOT_URL_CACHE_KEY='ultimatum-shot-url-cache-v1';
+function readShotUrlCache(appid){
+ try{
+  const all=JSON.parse(localStorage.getItem(SHOT_URL_CACHE_KEY)||'{}');
+  const item=all[String(appid)];
+  if(item&&item.savedAt&&Date.now()-item.savedAt<7*24*60*60*1000&&Array.isArray(item.shots)&&item.shots.length)return item.shots;
+ }catch(e){}
+ return null;
+}
+function writeShotUrlCache(appid,shots){
+ try{
+  const all=JSON.parse(localStorage.getItem(SHOT_URL_CACHE_KEY)||'{}');
+  all[String(appid)]={savedAt:Date.now(),shots};
+  localStorage.setItem(SHOT_URL_CACHE_KEY,JSON.stringify(all));
+ }catch(e){}
+}
+async function fetchShotFeed(url,appid,timeoutMs=12000){
+ const controller=new AbortController();
+ const timer=setTimeout(()=>controller.abort(),timeoutMs);
+ try{
+  const response=await fetch(url,{cache:'no-store',credentials:'omit',signal:controller.signal});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  const payload=await response.json();
+  const entry=payload&&payload[appid];
+  if(!entry||!entry.success||!entry.data||!Array.isArray(entry.data.screenshots)||!entry.data.screenshots.length)
+   throw new Error('No published screenshots in this listing');
+  const shots=entry.data.screenshots.filter(x=>x&&x.path_thumbnail&&x.path_full).slice(0,8);
+  if(!shots.length)throw new Error('No valid screenshot URLs');
+  return shots;
+ }finally{clearTimeout(timer);}
+}
+async function loadShots(i){
+ const g=G[i],box=document.getElementById('shots-'+i);if(!box)return;
+ box.innerHTML='<div class="shot-status">Checking saved screenshots…</div>';
+ if(g.appid){
+  try{
+   const cached=await getCachedShots(g.appid);
+   if(cached&&cached.shots&&cached.shots.length){
+    renderShotGallery(box,g,cached.shots.map(x=>({blob:x.blob,path_full:x.path_full})),true);return;
+   }
+  }catch(e){}
+ }
+ if(!g.appid){
+  box.innerHTML='<div class="shot-status">This game has no Steam screenshot feed in the archive. <a target="_blank" rel="noopener" href="'+screenshotSearch(g)+'">Browse game-specific gameplay screenshots</a>.</div>';return;
+ }
+ const remembered=readShotUrlCache(g.appid);
+ if(remembered){
+  renderShotGallery(box,g,remembered,false);
+  return;
+ }
+ box.innerHTML='<div class="shot-status">Finding screenshots…</div>';
+ const api='https://store.steampowered.com/api/appdetails?appids='+encodeURIComponent(g.appid)+'&l=english';
+ const encoded=encodeURIComponent(api);
+ const urls=[
+  'https://corsproxy.io/?url='+encoded,
+  'https://api.allorigins.win/raw?url='+encoded,
+  'https://api.codetabs.com/v1/proxy?quest='+encoded,
+  'https://cors.isomorphic-git.org/'+api,
+  'https://proxy.cors.dev/?'+encoded
+ ];
+ try{
+  // Race the providers instead of waiting for each slow proxy in sequence.
+  const shots=await Promise.any(urls.map(url=>fetchShotFeed(url,g.appid,12000)));
+  writeShotUrlCache(g.appid,shots);
+  if(document.getElementById('shots-'+i)===box)renderShotGallery(box,g,shots,false);
+ }catch(e){
+  if(document.getElementById('shots-'+i)!==box)return;
+  const noListing=e&&/no published screenshots/i.test(String(e.message||e));
+  box.innerHTML='<div class="shot-status">'+(noListing?'This Steam listing does not publish screenshots through its game-details feed.':'The screenshot feed could not be reached right now.')+' <a target="_blank" rel="noopener" href="'+screenshotSearch(g)+'">Open game-specific gameplay screenshots</a>. <button type="button" onclick="loadShots('+i+')">Retry</button> No placeholder art is used.</div>';
+ }
+}
+function setRating(i,v){S.ratings[i]=v;save();const el=document.getElementById('rating-'+i);if(el)el.querySelectorAll('button').forEach(b=>b.classList.toggle('on',+b.dataset.v===+v));}
+function setNote(i,v){S.notes[i]=v;save();}
+
+function openD(i){let g=G[i],p=S.prog[i]||0,ex=infoFor(g),rating=+(S.ratings[i]||0),note=S.notes[i]||'';document.getElementById('sheet').innerHTML=`<button class="close" onclick="closeD()">✕</button><div class="dhead"><div class="logo">${logo(g)}</div><div><div class="eyebrow">${g.status.toUpperCase()}</div><h2>${g.name}</h2><div class="muted">${g.genre}</div></div></div><div class="facts"><div class="fact"><b>${fit(g)}</b><small>Hardware fit</small></div><div class="fact"><b>${g.status}</b><small>Archive status</small></div><div class="fact"><b>${p}%</b><small>Progress</small></div></div><div class="panel"><h3>Game Dossier</h3><p class="muted">${g.bio}</p></div><div class="panel" style="margin-top:10px"><h3>Gameplay Screenshots</h3><div id="shots-${i}"><div class="shot-status">Screenshots load from game-specific sources when available.</div></div><button class="btn alt" style="margin-top:8px" onclick="loadShots(${i})">Load actual gameplay screenshots</button></div><div class="dossier-grid"><section class="dossier-panel"><h3>🧭 Spoiler-free hints</h3><ul>${ex.hints.map(t=>`<li>${t}</li>`).join('')}</ul></section><section class="dossier-panel"><h3>🔎 Secrets & exploration</h3><ul>${ex.secrets.map(t=>`<li>${t}</li>`).join('')}</ul><div class="module-note">Exploration tips only — no story spoilers.</div></section><section class="dossier-panel"><h3>⚙️ Performance</h3><p>${ex.perf}</p><div class="module-note">Suggested starting point, not a guaranteed FPS result.</div></section><section class="dossier-panel"><h3>⌨️ Controls</h3><p>${ex.controls}</p></section><section class="dossier-panel"><h3>⭐ Your rating</h3><p class="module-note">Save a personal rating from 1 to 5.</p><div class="rating-row" id="rating-${i}">${[1,2,3,4,5].map(v=>`<button data-v="${v}" class="${rating===v?'on':''}" onclick="setRating(${i},${v})">${v} ★</button>`).join('')}</div></section><section class="dossier-panel"><h3>📝 Personal notes</h3><textarea placeholder="Your tips, mission reminders, settings…" oninput="setNote(${i},this.value)">${note.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}</textarea><div class="module-note">Saved on this device in your existing ULTIMATUM local storage.</div></section></div><div class="panel" style="margin-top:10px"><h3>Local Progress</h3><input type="range" min="0" max="100" value="${p}" oninput="prog(${i},this.value)" style="width:100%"><b id="pv">${p}%</b></div><div class="actions" style="margin-top:10px"><button class="btn" onclick="rot(${i})">${S.rot.includes(i)?'Remove from Rotation':'Add to Rotation'}</button><button class="btn alt" onclick="fav(${i})">♡ Favorite</button><button class="btn alt" onclick="done(${i})">${S.done.includes(i)?'↩ Unfinish':'✓ Finished'}</button></div>`;document.getElementById('modal').className='modal show'}
+function closeD(){document.getElementById('modal').className='modal'}document.getElementById('modal').onclick=e=>e.target.id=='modal'&&closeD();
+function surprise(){let a=G.filter(g=>g.status=='Core'),i=G.indexOf(a[Math.floor(Math.random()*a.length)]);openD(i)}function backup(){let a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(S)],{type:'application/json'}));a.download='ultimatum-backup.json';a.click()}function resetAll(){if(confirm('Reset all local choices, ratings and notes?')){S={fav:[],rot:[],done:[],prog:{},notes:{},ratings:{}};save();render()}}
+stats();render();
+</script></body></html>
